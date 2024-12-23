@@ -1,0 +1,133 @@
+query getAllUsers {
+  users {
+    id
+    username
+    email
+  }
+}
+
+query getAllEvents {
+  events {
+    id
+    title
+    # desc
+    # date
+    # from
+    # to
+    # location_id
+    # user_id
+  }
+}
+
+query getAllLocations {
+  locations {
+    id
+    name
+    desc
+    lat
+    lng
+  }
+}
+
+query getAllParticipants {
+  participants {
+    id
+    user_id
+    event_id
+  }
+}
+
+query getUserById {
+  user(id:1) {
+    id
+    username
+    email
+  }
+}
+
+query getUsersEvents {
+  user(id:13) {
+    id
+    username
+    email
+    events {
+      id
+      title
+    }
+  }
+}
+
+query getEventsUser {
+  event(id: 1) {
+  	id
+    title
+    date
+    user {
+      id
+      username
+      email
+    }
+  }
+}
+
+query getEventsLocation {
+  event(id:12) {
+    id
+    title
+    date
+		location {
+      id
+      name 
+      desc
+      lat
+      lng
+    }
+  }
+}
+
+query getEventsParticipants {
+  event(id: 5) {
+    id
+    title
+    participants {
+      id
+      user_id,
+      event_id
+    }
+  }
+}
+
+ query test {
+  events{
+    id
+    title
+    user{
+      id
+      username
+    }
+    participants{
+      id
+      user_id
+    }
+    location{
+      id
+      name
+    }
+  }
+}
+
+query getLocationById {
+  location(id: 2) {
+    id
+    name
+    desc
+  }
+}
+
+query getParticipantById {
+  participant(id: 40) {
+    id
+    user_id
+    event_id
+  }
+}
